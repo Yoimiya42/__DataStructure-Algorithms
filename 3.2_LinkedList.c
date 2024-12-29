@@ -1,7 +1,22 @@
-
 # include <stdio.h>
 # include <stdlib.h>
 # define __ printf("\n");
+//----------------------------------------------- D E F I N E ------------------------------------------
+ListNode* initNode(int val);
+
+void appendAtHead(ListNode** head, ListNode** tail, int value);
+void appendAtTail(ListNode** head, ListNode** tail, int value);
+void createLinkedList(ListNode** head, ListNode** tail, int num_nodes);
+
+void insertNode(ListNode* head, int targetIndex, int value);
+
+void deleteAtHead(ListNode** head, ListNode** tail);
+void deleteAtTail(ListNode** head, ListNode** tail);
+void deleteNode(ListNode** head, ListNode** tail, int targetValue);
+
+void traverseLinkedList(ListNode* head);
+
+int findNode(ListNode* head, int target);
 
 /* 1. Initialization --------------------------------------------------------------------------------
 Values of a node + a pointer pointing to another node
@@ -102,7 +117,6 @@ void insertNode(ListNode* head, int targetIndex, int value)
        index++;
        current = current->next;
     }
-
 }
 
 /* 3. Delete nodes ---------------------------------------------------------------------------------
