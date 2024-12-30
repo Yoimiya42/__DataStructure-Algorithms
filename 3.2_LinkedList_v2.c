@@ -1,8 +1,22 @@
 
+/*
+Linked List implemented using C with head pointer only.
+*/
+
+
+// ----------------------------------------------- D E F I N E ------------------------------------------
+ListNode* initNode(int value);
+void appendAtHead(ListNode* newNode);
+void appendAtTail(ListNode* newNode);
+void deleteAtHead();
+void deleteAtTail();
+void traverseLinkedList();
+void createLinkedList();
+void clearMemory();
+
+// -----------------------------------------------------------------------------------------------------
 # include <stdio.h>
 # include <stdlib.h>
-
-
 
 typedef struct ListNode{
     int val;
@@ -132,7 +146,17 @@ void createLinkedList()
     printf("Created Successfully. Your Linked List is:\n");
 }
 
-
+void clearMemory()
+{
+    ListNode* current = head;
+    while(current)
+    {
+        ListNode* temp = current;
+        current = current->next;
+        free(temp);
+    }
+    head = NULL;
+}
 
 int main()
 {   

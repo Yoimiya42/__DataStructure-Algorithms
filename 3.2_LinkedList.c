@@ -1,3 +1,8 @@
+
+/*
+Linked List implemented using C with head and tail pointers.
+*/
+
 # include <stdio.h>
 # include <stdlib.h>
 # define __ printf("\n");
