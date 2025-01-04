@@ -116,6 +116,7 @@ void testHashMap(HashMap* hmap)
                 char* val = malloc(sizeof(char) * 100);
                 scanf("%d %s", &key, val);
                 put(hmap, key, val);
+                free(val);
                 break;
             }
             case 2:
