@@ -10,8 +10,11 @@ Additionally, hash algorithms need high-level security:
 
 ## Design of Hash Algorithms
 
-**Additives Hash** 
-**Multiplicative Hash**
-**XOR Hash**
+**Additives Hash**  
+
+**Multiplicative Hash**  
+
+**XOR Hash**  
+
 **Rotating Hash**
 
