@@ -4,6 +4,21 @@
 typedef int (*InsertFunc)(int*, int, int);
 typedef int (*checkFunc)(int*, int, int);
 
+
+int calculateMid(int start, int end);
+
+int insertNoDup(int* arr, int size, int value);
+int insertWithDup(int* arr, int size, int value);
+
+int insertNum(int* arr, int size, int value, InsertFunc insertFunc);
+
+int checkLeft(int* arr, int size, int target);
+int checkRight(int* arr, int size, int target);
+
+
+
+
+
 // ------------------  Binary Search Insertion -----------------------
 int calculateMid(int start, int end)
 {
@@ -72,6 +87,21 @@ int insertWithDup(int* arr, int size, int value)
     }
 
     return start;
+}
+
+// ----------------------  Insertion  ---------------------------------
+int insertNum(int* arr, int size, int value, InsertFunc insertFunc)
+{
+    int index = insertFunc(arr, size, value);
+    for(int i = size - 1 ; i > index; i--)
+    {
+        arr[i] = arr[i - 1];
+    }
+
+    arr[index] = value;
+    printf("Insertion index = %d", index);
+
+    return index;
 }
 
 /* -------------------------------------------------------------------
@@ -145,20 +175,6 @@ int checkRight(int* arr, int size, int target)
     }
 }
 
-// ----------------------  Insertion ---------------------------------
-int insertNum(int* arr, int size, int value, InsertFunc insertFunc)
-{
-    int index = insertFunc(arr, size, value);
-    for(int i = size - 1 ; i > index; i--)
-    {
-        arr[i] = arr[i - 1];
-    }
-
-    arr[index] = value;
-    printf("Insertion index = %d", index);
-
-    return index;
-}
 
 // ------------------------- T E S T ----------------------------
 void test_InsertNoDup()
