@@ -16,17 +16,14 @@ int checkLeft(int* arr, int size, int target);
 int checkRight(int* arr, int size, int target);
 
 
-
-
-
 // ------------------  Binary Search Insertion -----------------------
 int calculateMid(int start, int end)
 {
     return start + (end - start) / 2;
 }
 
-/* ------------------------------------------------------------------
-Case 1: insert a value into an array with no duplicate values
+/* Case 1: insert a value into an array with no duplicate values ------------------------------------------------------------------
+
 Ultimately, the 'start' points to the first element exceeding the target
 While the 'end' points to the first falling below the target
 
@@ -34,6 +31,7 @@ While the 'end' points to the first falling below the target
         |   |
         end start
 
+return start
 */
 int insertNoDup(int* arr, int size, int value)
 {
@@ -57,14 +55,15 @@ int insertNoDup(int* arr, int size, int value)
     return start;
 }
 
-/* -------------------------------------------------------------------
-Case 2: insert a value into an array with duplicate values
+/* Case 2: insert a value into an array with duplicate values-------------------------------------------------------------------
+
 Ultimately, the 'start' points the first element exceeding/equal to the target
 While the 'end' points to the first dalling below the target
 
 {2, 4,  7, 7, 7, 9, 12, 16} insert 7
     |   |
    end start      
+return start
 */
 int insertWithDup(int* arr, int size, int value)
 {
@@ -104,15 +103,14 @@ int insertNum(int* arr, int size, int value, InsertFunc insertFunc)
     return index;
 }
 
-/* -------------------------------------------------------------------
-Case 3: find the left boundary 
+/* Case 3: find the left boundary -------------------------------------------------------------------
 Given a sorted array nums of length n, which may contain duplicate elements,
 return the index of the leftmost occurrence of the target value. If not present, return -1.
 
 {1, 4, 5,  9, 9, 9, 12, 16, 24, 36, 42}    target = 9   => return 3
        |   |
       end start
-    
+return start
 */
 int checkLeft(int* arr, int size, int target)
 {
@@ -141,11 +139,11 @@ int checkLeft(int* arr, int size, int target)
     }
 }
 
-/* -------------------------------------------------------------------
-Case 4: fine the right boundary
+/* Case 4: fine the right boundary -------------------------------------------------------------------
 {1, 5, 7, 8, 8, 8, 8, 8, 8, 8,  10, 16}   target = 8  => return 9
                             |    |
                            end start
+return end
 */
 
 int checkRight(int* arr, int size, int target)
